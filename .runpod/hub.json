@@ -7,14 +7,14 @@
   "config": {
     "runsOn": "GPU",
     "containerDiskInGb": 150,
-    "gpuIds": "BLACKWELL_96,ADA_80_PRO,AMPERE_80",
+    "gpuIds": "ADA_80_PRO,AMPERE_80",
     "gpuCount": 1,
-    "allowedCudaVersions": ["13", "12.9", "12.8"],
+    "allowedCudaVersions": ["13"],
     "presets": [
       {
-        "name": "deepseek-ai/deepseek-r1-distill-llama-8b",
+        "name": "Qwen/Qwen3.6-27B-FP8",
         "defaults": {
-          "MODEL_NAME": "deepseek-ai/deepseek-r1-distill-llama-8b"
+          "MODEL_NAME": "Qwen/Qwen3.6-27B-FP8"
         }
       }
     ],
