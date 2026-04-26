@@ -1,16 +1,16 @@
-FROM nvidia/cuda:12.9.1-base-ubuntu24.04
+FROM nvidia/cuda:13.2.1-base-ubuntu22.04
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends python3-pip build-essential python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
-RUN ldconfig /usr/local/cuda-12.9/compat/ \
+RUN ldconfig /usr/local/cuda-13.2/compat/ \
     && python3 -m pip install uv
 
 # Install vLLM with FlashInfer - use CUDA 13.2 PyTorch wheels
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv pip install --system "vllm[flashinfer]==0.19.1" \
-    --extra-index-url https://download.pytorch.org/whl/cu129 \
+    --extra-index-url https://download.pytorch.org/whl/cu130 \
     --index-strategy unsafe-best-match
 
 
