@@ -45,7 +45,8 @@ ENV MODEL_NAME=$MODEL_NAME \
     # Prevent rayon thread pool panic in containers where ulimit -u < nproc
     # (tokenizers uses Rust's rayon which tries to spawn threads = CPU cores)
     TOKENIZERS_PARALLELISM=false \
-    RAYON_NUM_THREADS=4
+    RAYON_NUM_THREADS=4 \
+    CUDA_VERSION=13.2.1
 
 ENV PYTHONPATH="/:/vllm-workspace"
 
