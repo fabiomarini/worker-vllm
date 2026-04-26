@@ -30,7 +30,7 @@
     }
   ],
   "config": {
-    "gpuTypeId": "NVIDIA RTX PRO 6000 Blackwell Workstation Edition",
+    "gpuTypeId": "NVIDIA GeForce RTX 5090",
     "gpuCount": 1,
     "env": [
       {
